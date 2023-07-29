@@ -34,7 +34,7 @@ Roorkee, Uttarakhand, 247667</p>
     <div className={styles["users"]}>
     <input 
   type="text" 
-  placeholder='first Name'
+  placeholder='First Name'
   required
   />
    <input 
