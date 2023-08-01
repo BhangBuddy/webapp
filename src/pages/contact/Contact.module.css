@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Josefin+Sans:wght@500&family=Libre+Baskerville:wght@700&family=Roboto+Slab:wght@300;600&family=Roboto:wght@400;900&family=Tilt+Warp&family=Ubuntu:wght@300&display=swap');
 
 .contact-container {
     display: flex;
@@ -7,6 +7,8 @@
     padding: 30px;
     /* border: 2px solid blue; */
     justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 
 .sub-container {

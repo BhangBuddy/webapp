@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 /* main css  */
 
 /* thieerwerwerwer */
@@ -15,5 +16,7 @@
     --color-white: #ffff;
     --color-whitesmoke: whitesmoke;
     --color-green: green;
+    --parrot-green: #10ac8538;
+    --palm-green: #218c74;
 }
 
