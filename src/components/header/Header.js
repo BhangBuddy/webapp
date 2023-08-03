@@ -26,6 +26,7 @@ const cart = (
 )
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const [displayName, setDisplayName] = useState("");
   const [showMenu, setShowMenu] = useState(false);
 
@@ -57,6 +58,14 @@ const Header = () => {
       }
     });
   }, [dispatch, displayName]);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const hideMenu = () => {
+    setShowMenu(false);
+  };
 
   const logoutUser = () => {
     signOut(auth)
