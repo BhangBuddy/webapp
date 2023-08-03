@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
   const [displayName, setDisplayName] = useState("");
 
   const navigate = useNavigate();
@@ -42,6 +43,14 @@ const Header = () => {
       }
     });
   }, [dispatch, displayName]);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const hideMenu = () => {
+    setShowMenu(false);
+  };
 
   const logoutUser = () => {
     signOut(auth)
