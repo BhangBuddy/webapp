@@ -1,7 +1,7 @@
 const Cardapi = [
     {
       id: 1,
-      image: "webapp\src\assets\Beard Oil - Front - proc.jpg",
+      image: "images/beardOil.jpg",
       name: "Beard Oil",
       category: "Men's",
       price: "₹449",
@@ -11,7 +11,7 @@ const Cardapi = [
   
     {
       id: 2,
-      image: "webapp\src\assets\Bhangola _ Hair Oil - proc.jpg",
+      image: "images/hairOil.jpg",
       name: "Hair Oil",
       category: "Common",
       price: "₹679",
@@ -20,7 +20,7 @@ const Cardapi = [
     },
     {
       id: 3,
-      image: "webapp\src\assets\Bhangola Face Serum Front 1 -proc.jpg",
+      image: "images/faceSerum.jpg",
       name: "Face Serum",
       category: "Common",
       price: "₹619",
@@ -29,7 +29,7 @@ const Cardapi = [
     },
     {
       id: 4,
-      image: "webapp\src\assets\NoteBook.png",
+      image: "images/notebook.png",
       name: "NoteBook",
       category: "Common",
       price: "₹349",
@@ -38,7 +38,7 @@ const Cardapi = [
     },
     {
       id: 5,
-      image: "webapp\src\assets\Bhangola Face Wash - Front.png",
+      image: "images/faceWash.png",
       name: "Face Wash",
       category: "Common",
       price: "₹369",
@@ -47,7 +47,7 @@ const Cardapi = [
     },
     {
       id: 6,
-      image: "webapp\src\assets\shoes.JPG",
+      image: "images/shoes.jpg",
       name: "Shoes",
       category: "Common",
       price: "₹1849",
@@ -56,7 +56,7 @@ const Cardapi = [
     },
     {
       id: 7,
-      image: "webapp\src\assets\storeCombo.png",
+      image: "images/storeCombo.png",
       name: "Combo",
       category: "common",
       price: "₹---",
@@ -65,7 +65,7 @@ const Cardapi = [
     },
     {
       id: 8,
-      image: "webapp\src\assets\Cosmetics.png",
+      image: "images/cosmetics.png",
       name: "Cosmetics",
       category: "Common",
       price: "₹---",
@@ -74,8 +74,8 @@ const Cardapi = [
     },
     {
       id: 9,
-      image: "webapp\src\assets\facecare_combo.jpg",
-      name: "facecare_combo",
+      image: "images/facecareCombo.jpg",
+      name: "Facecare Combo",
       category: "common",
       price: "₹--",
       description:

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./auth.module.css";
-import loginImg from "../../assets/login.png";
+import loginImg from "../../assets/login.gif";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import Card from "../../components/card/Card";

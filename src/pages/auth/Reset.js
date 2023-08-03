@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./auth.module.css";
-import resetImg from "../../assets/forgot.png";
+import resetImg from "../../assets/forgot.gif";
 import Card from "../../components/card/Card";
 import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
