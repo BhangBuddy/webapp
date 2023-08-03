@@ -24,7 +24,7 @@
 /* Buttons CSS */
 
 .--btn {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 400;
   padding: 6px 8px;
   margin: 0 5px 0 0;
@@ -51,7 +51,7 @@
 
 .--btn-primary {
   color: #fff;
-  background: #007bff;
+  background: var(--palm-green);
 }
 .--btn-secondary {
   color: #fff;
@@ -60,7 +60,7 @@
 }
 .--btn-danger {
   color: #fff;
-  background: orangered;
+  background: rgb(228, 86, 35);
 }
 
 .--btn-success {

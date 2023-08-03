@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./auth.module.css";
-import registerImg from "../../assets/register.png";
+import registerImg from "../../assets/register.gif";
 import Card from "../../components/card/Card";
 import Loader from "../../components/loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
