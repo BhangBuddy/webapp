@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Josefin+Sans:wght@500&family=Libre+Baskerville:wght@700&family=Roboto+Slab:wght@300;600&family=Roboto:wght@400;900&family=Tilt+Warp&family=Ubuntu:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Josefin+Sans:wght@500&family=Libre+Baskerville:wght@700&family=Roboto+Slab:wght@300;600&family=Roboto:wght@400;900&family=Tilt+Warp&family=Ubuntu:wght@300&display=swap'); */
 
 section {
     /* background-color: var(--parrot-green); */
     /* background-color: whitesmoke; */
-    font-family: 'Ubuntu', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
 }
 
 .about-container {
@@ -98,8 +98,8 @@ section {
     flex-direction: column;
     text-align: center;
     /* border: 2px solid red; */
-    width: 30%;
-    height: 60vh;
+    width: 25%;
+    height: 45vh;
     gap: 1rem;
     border-radius: 10px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
@@ -108,16 +108,16 @@ section {
 
 .sub-img img {
     width: 100%;
-    height: 50vh;
+    height: 35vh;
     border-radius: 10px 10px 0px 0px;
     cursor: pointer;
     transition: all 0.3s;
 }
 
-.sub-img img:hover {
+/* .sub-img img:hover {
     transform: scale(1.2);
     border-radius: 50%;
-}
+} */
 
 
 
@@ -144,7 +144,7 @@ section {
 
 @media screen and (max-width: 1300px) {
   .sub-img {
-    width: 40%;
+    width: 30%;
   }
   .about-img1 {
     align-items: center;
@@ -256,6 +256,47 @@ section {
         height: 50px;
     }
 
+}
+
+
+
+/* ingredients  */
+.ingred {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.ingred h1 {
+    color: var(--light-green);
+}
+
+.ingredients-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 20px;
+}
+
+.sub-ingred {
+    width: 30%;
+    height: 45vh;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding-bottom: 20px;
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px 10px 10px 10px;
+    color: var(--palm-green);
+}
+
+.sub-ingred img {
+    width: 100%;
+    height: 35vh;
+    border-radius: 10px 10px 0px 0px;
 }
 
 

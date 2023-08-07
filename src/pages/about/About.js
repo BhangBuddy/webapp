@@ -55,7 +55,7 @@ const About = () => {
     </div>
 
 
-    <div className={styles["about-img1"]}>
+    {/* <div className={styles["about-img1"]}>
     <div className={styles["sub-img"]}>
      <img src="https://s3-alpha-sig.figma.com/img/f9aa/253d/6a8b0ab4cffdf15cc846ce4561308b93?Expires=1691971200&Signature=MWF00Ega32k2Zl~2-WqEXKZS6Q1jiuzoKo~5jb2xEqZBkWt8O1pyYvnRGPk3R-jl31wrHrRD5fdVSpQsVb-kW9YR1zZXejRvO55r6QxvEXypoyZwJw8p93haIdWMf6IZ2WpGOXCyc~Ijb~RjKZ3e7jTHu~~tBmiXvWh3Nl48ce3e3S3Du1gs4VkQWvyaNsT8cZh9DfDfIv5ha6P8lyXqQVvlSTWWwH8P6b6YmzdBjrNp72CZbn1cZ6PGaDivO1rnIHQOZ5oan~mUtbIaJgNzktg~lFEUMX4lp~LjtLEAm5LEmCwHy6JfyySFNiyNOcziAU-Il1gHmNreHEVrRAmTfA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="about-img1" />
      <h3>Vision</h3>
@@ -64,8 +64,26 @@ const About = () => {
     <img src="https://s3-alpha-sig.figma.com/img/fa3f/dc01/f365f75e96a7328eb10e4f0f254900bf?Expires=1691971200&Signature=FgBPJmDDiIJ00VoEfboCmxyRwh32E9NsrXKTLpkoJeP7lopYfA1Ob05kmYVG~YAGbR9omNv5xeLW7vqmHsl78UUD81c2i4ZSzQFThBESH4ezxuQZRDwNNdVeNeCWgSdBKi79iROZ2AJV61Adf8I~1-zHLldId7XP~czgXEQRSZhW5jRsUe07~RlA9zRfXzKENbkALA4Ay2ZwnmbBW1CXKnCh3lEpmA7Qx0nOKI45LyBZJ80gIhYPrSbgas6Xg4SWLJncuRQOSeXjoaExbrod17WkNZNbY9c5OcyY6uoyELYeSHEcnj81OQJfG07EaSgnclwm7lUS44VJO-~j8ONSyA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="about-img2" />
     <h3>Mission</h3>
     </div>
+    </div> */}
 
+    <div className={styles.ingred}>
+    <h1>Ingredients</h1>
+    <div className={styles["ingredients-container"]}>
+    <div className={styles["sub-ingred"]}>
+    <img src="https://uttarakhandhemp.com/wp-content/uploads/2021/12/WhatsApp-Image-2021-12-09-at-17.07.52.jpeg" alt="seeds" />
+    <p>Hemp Seeds</p>
     </div>
+    <div className={styles["sub-ingred"]}>
+    <img src="https://media.istockphoto.com/id/1142648631/photo/raw-flax-fiber-isolated-on-white.jpg?s=612x612&w=0&k=20&c=V6iBoUHzzQE4x6trEH4ppgfDpFB-W6RkLfMqf3UfeDc=" alt="fibre" />
+    <p>Hemp Fibre</p>
+    </div>
+    <div className={styles["sub-ingred"]}>
+    <img src="https://hempgazette.com/wp-content/uploads/2017/04/industrial-hemp-fiber.jpg" alt="stalk" />
+    <p>Hemp Stalk</p>
+    </div>
+    </div>
+    </div>
+
     </section>
   </>
   )
