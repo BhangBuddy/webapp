@@ -7,28 +7,30 @@ import { useEffect, useState } from "react";
 import { auth } from "../../firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "../../redux/slice/authSlice";
+import {
+  REMOVE_ACTIVE_USER,
+  SET_ACTIVE_USER,
+} from "../../redux/slice/authSlice";
 import { toast } from "react-toastify";
 import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
-import { FaTimes} from 'react-icons/fa';
-
-
-
+import { FaTimes } from "react-icons/fa";
 
 const cart = (
   <li>
-  <NavLink className={styles.cart} to="/cart">
-    Cart
-    <FaShoppingCart size={20} />
-    <p>0</p>
-  </NavLink>
-</li>
-)
+    <NavLink className={styles.cart} to="/cart">
+      Cart
+      <FaShoppingCart size={20} />
+      <p>0</p>
+    </NavLink>
+  </li>
+);
 
 const Header = () => {
-  const [displayName, setDisplayName] = useState("");
   const [showMenu, setShowMenu] = useState(false);
+
   const [scrollPage, setScrollPage] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -58,6 +60,14 @@ const Header = () => {
       }
     });
   }, [dispatch, displayName]);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const hideMenu = () => {
+    setShowMenu(false);
+  };
 
   const logoutUser = () => {
     signOut(auth)
@@ -99,7 +109,7 @@ const Header = () => {
 
   const activeLink = ({isActive}) => 
 (isActive ? `${styles.active}` : "")
-
+  const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
   return (
     <header className={scrollPage ? `${styles.fixed}` : null}>
       <div className={styles["top-header"]}>
@@ -115,28 +125,57 @@ const Header = () => {
             <img src={logo} className={styles.logo} alt="bhangola logo" />
           </NavLink>
         </div>
-        <nav className={showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`}>
-        <NavLink className={styles["menu-icon"]} to="/">
-            <img  src={logo} className={styles.logo} alt="bhangola logo"
-           onClick={hideMenu}  />
+        <nav
+          className={
+            showMenu ? `${styles["show-nav"]}` : `${styles["hide-nav"]}`
+          }
+        >
+          <NavLink className={styles["menu-icon"]} to="/">
+            <img
+              src={logo}
+              className={styles.logo}
+              alt="bhangola logo"
+              onClick={hideMenu}
+            />
           </NavLink>
-        <FaTimes className={styles["menu-icon"]} size={22} color='black' style={{position: "absolute", right: "20px", top: "40px", cursor: "pointer"}} onClick={hideMenu}/>
+          <FaTimes
+            className={styles["menu-icon"]}
+            size={22}
+            color="black"
+            style={{
+              position: "absolute",
+              right: "20px",
+              top: "40px",
+              cursor: "pointer",
+            }}
+            onClick={hideMenu}
+          />
           <ul>
             <li>
-              <NavLink className={activeLink} to="/" onClick={hideMenu}>Home</NavLink>
+              <NavLink className={activeLink} to="/" onClick={hideMenu}>
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink className={activeLink} to="/shop" onClick={hideMenu}>Shop Now</NavLink>
+              <NavLink className={activeLink} to="/shop" onClick={hideMenu}>
+                Shop Now
+              </NavLink>
             </li>
             <li>
-              <NavLink className={activeLink} to="/about" onClick={hideMenu}>About Us</NavLink>
+              <NavLink className={activeLink} to="/about" onClick={hideMenu}>
+                About Us
+              </NavLink>
             </li>
             <li>
-              <NavLink className={activeLink} to="/contact" onClick={hideMenu}>Contact</NavLink>
+              <NavLink className={activeLink} to="/contact" onClick={hideMenu}>
+                Contact
+              </NavLink>
             </li>
             <li>
               <ShowOnLogout>
-                <NavLink className={activeLink} to="/login" onClick={hideMenu}>Login</NavLink>
+                <NavLink className={activeLink} to="/login" onClick={hideMenu}>
+                  Login
+                </NavLink>
               </ShowOnLogout>
             </li>
             <li>
@@ -154,14 +193,14 @@ const Header = () => {
                 </NavLink>
               </ShowOnLogin>
             </li>
-           {cart}
+            {cart}
           </ul>
         </nav>
 
         <div className={styles["menu-icon"]}>
-        {/* {cart} */}
-      <HiOutlineMenuAlt3 size={28} onClick={toggleMenu} />
-      </div>
+          {/* {cart} */}
+          <HiOutlineMenuAlt3 size={28} onClick={toggleMenu} />
+        </div>
       </div>
     </header>
   );
