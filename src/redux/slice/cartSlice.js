@@ -18,5 +18,4 @@ const cartSlice = createSlice({
 export const { SAVE_URL } = cartSlice.actions;
 
 export const selectPreviousURL = (state) => state.cart.previousURL;
-
 export default cartSlice.reducer;

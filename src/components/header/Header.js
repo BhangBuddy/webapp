@@ -81,12 +81,12 @@ const Header = () => {
   };
 
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  }
-  const hideMenu = () => {
-    setShowMenu(false);
-  }
+  // const toggleMenu = () => {
+  //   setShowMenu(!showMenu);
+  // }
+  // const hideMenu = () => {
+  //   setShowMenu(false);
+  // }
 
 
 
@@ -107,8 +107,8 @@ const Header = () => {
 
 
 
-  const activeLink = ({isActive}) => 
-(isActive ? `${styles.active}` : "")
+//   const activeLink = ({isActive}) => 
+// (isActive ? `${styles.active}` : "")
   const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
   return (
     <header className={scrollPage ? `${styles.fixed}` : null}>
@@ -156,11 +156,11 @@ const Header = () => {
                 Home
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink className={activeLink} to="/shop" onClick={hideMenu}>
                 Shop Now
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink className={activeLink} to="/about" onClick={hideMenu}>
                 About Us
