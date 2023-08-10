@@ -1,4 +1,6 @@
 import styles from "./Header.module.css";
+import { selectCartItems } from "../../redux/slice/cartSlice";
+import { useSelector } from "react-redux";
 import logo from "../../assets/bhangola-logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
@@ -15,22 +17,22 @@ import { toast } from "react-toastify";
 import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
 import { FaTimes } from "react-icons/fa";
 
-const cart = (
-  <li>
-    <NavLink className={styles.cart} to="/cart">
-      Cart
-      <FaShoppingCart size={20} />
-      <p>0</p>
-    </NavLink>
-  </li>
-);
-
 const Header = () => {
+  const cartItems = useSelector(selectCartItems);
+  const cartItemCount = cartItems.length;
+  const cart = (
+    <li>
+      <NavLink className={styles.cart} to="/cart">
+        Cart
+        <FaShoppingCart size={20} />
+        <p>{cartItemCount}</p>
+      </NavLink>
+    </li>
+  );
   const [showMenu, setShowMenu] = useState(false);
 
   const [scrollPage, setScrollPage] = useState(false);
   const [displayName, setDisplayName] = useState("");
-
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -61,14 +63,6 @@ const Header = () => {
     });
   }, [dispatch, displayName]);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
-  const hideMenu = () => {
-    setShowMenu(false);
-  };
-
   const logoutUser = () => {
     signOut(auth)
       .then(() => {
@@ -80,35 +74,25 @@ const Header = () => {
       });
   };
 
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
-  }
+  };
   const hideMenu = () => {
     setShowMenu(false);
-  }
+  };
 
-
-
-
-  // scrolll page 
+  // scrolll page
 
   const fixNav = () => {
-    if(window.scrollY > 50) {
+    if (window.scrollY > 50) {
       setScrollPage(true);
-    }
-    else {
+    } else {
       setScrollPage(false);
     }
-  }
+  };
 
-  window.addEventListener("scroll", fixNav)
+  window.addEventListener("scroll", fixNav);
 
-
-
-
-  const activeLink = ({isActive}) => 
-(isActive ? `${styles.active}` : "")
   const activeLink = ({ isActive }) => (isActive ? `${styles.active}` : "");
   return (
     <header className={scrollPage ? `${styles.fixed}` : null}>
