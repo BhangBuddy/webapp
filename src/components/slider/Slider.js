@@ -65,7 +65,7 @@ const Slider = () => {
                             <h2>{heading}</h2>
                             <p>{desc}</p>
                             <hr />
-                            <NavLink to="/shop">
+                            <NavLink to="#product">
                             Shop Now
                             </NavLink>
                         </div>
