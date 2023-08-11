@@ -3,6 +3,7 @@ import styles from "./Cart.module.css";
 import cardData from "./Cardapi";
 import { UseSelector, useDispatch } from "react-redux";
 import { addItemToCart } from "../../redux/slice/cartSlice";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ const Cart = () => {
 
           return (
             <div className={styles["sub-container"]} key={id}>
+              <Link to={`product-details/${id}`}>
               <img src={image} alt={name} />
+              </Link>
               <div className={styles["card-data"]}>
                 <p>
                   <b>{name}</b>

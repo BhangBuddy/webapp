@@ -5,6 +5,8 @@ import {Home, Shop, About, Contact, Cart, Login, Register, Reset} from "./pages"
 import {Header, Footer} from "./components";
 import { ToastContainer } from 'react-toastify';
 import ProductDetails from './components/product-details/ProductDetails';
+import Cardapi from './components/cartcard/Cardapi';
+
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset" element={<Reset />} />
-          <Route path="/product-details/:id" element={<ProductDetails />} />
+          <Route path="/product-details/:id" element={<ProductDetails product={Cardapi} />} />
         </Routes>
 
         <Footer />
