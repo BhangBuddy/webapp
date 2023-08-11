@@ -99,8 +99,7 @@ nav ul li a:hover {
         left: 0;
         width: 50%;
         min-height: 200vh;
-        /* background-color: white; */
-        backdrop-filter: blur(20px);
+        background-color: whitesmoke;
         padding: 1rem;
         z-index: 999;
         transform: translateX(-200%);
@@ -141,7 +140,7 @@ nav ul li a:hover {
     nav ul li a {
         text-decoration: none;
         font-size: 24px;
-        color: rgb(24, 17, 17);
+        color: var(--light-green);
     }
 
     nav ul li a:hover {
