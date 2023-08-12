@@ -20,28 +20,114 @@ section h1 {
     justify-content: center;
 }
 
-.pm-btn{
-    border-radius: 50%;
-    width: 1.5vw;
-    height: 3vh;
-    background-color: #56C02B;
+.cart-container {
+    /* border: 2px solid red; */
+    padding: 40px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-sub{
+    font-family: sans-serif;
+    display: flex;
+    width: 100%;
+    max-width: 40rem;
+    /* border: 2px solid green; */
+    height: 22rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 5px;
+}
+
+
+.cart-sub img{
+    border: 1rem solid #165848;
+    max-width: 20rem;
+    height: auto;
+    border-radius: 5px 5px 0px 0px;
+
+}
+
+
+.green-div{
+    justify-content: space-evenly;
+    align-items: center;
     color: white;
-    border-color: #165848;
-    font-weight: 600;
+    display: flex;
+    background-color: #165848;
+    height: 3rem;
+    width: 6rem;
+    border-radius: 5px;
+    
+}
+
+.buy-btn{
+    margin-left: 45%;
+    background-color: #165848;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.cart-carddata{
+    margin-left: 1rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    /* border: 2px solid green;    */
+    padding: 10px 20px 10px 20px;
+    /* color: var(--color-green); */
+    color: #165848;
+
+}
+
+.cart-carddata h1{
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cart-carddata h2{
+    font-size: medium;
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.cart-carddata p{
+   font-weight: 700;
+}
+
+
+.pm-btn{
+    cursor: pointer;
 }
 
 .btn-div{
+    align-items: center;
+    margin-top: 3rem;
     display: flex;
     gap: 1vw;
+}
+
+.btn-div h4 {
+    color: gray;
+    text-decoration: underline;
 }
 
 .sub-container {
     width: calc(100%/3.8);
     /* border: 2px solid green; */
-    height: auto;
+    height: 22rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 5px;
+    
 }
+
 
 .sub-container img{
     width: 100%;
