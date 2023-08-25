@@ -27,8 +27,8 @@ flex-wrap: wrap;
 }
 
 .sub {
-    width: 30%;
-    height: 60vh;
+    width: 25%;
+    height: 55vh;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     flex-direction: column;
