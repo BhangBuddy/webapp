@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { Home, Shop, About, Contact, Cart, Login, Register, Reset } from './pages';
+import { Home, Shop, About, Contact, Cart, Login, Register, Reset, Profile } from './pages';
 import { Header, Footer } from './components';
 import { ToastContainer } from 'react-toastify';
 import ProductDetails from './components/product-details/ProductDetails';
@@ -46,6 +46,7 @@ function App() {
           <Route path='/auth/success/' element={<Googlesuccess/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/reset_password/:id/:token" element={<Confirm />} />
+          <Route path='/profile' element={<Profile/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

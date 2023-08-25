@@ -158,10 +158,10 @@ const Header = () => {
              
             <li>
               <>
-                <a href="#home" style={{ color: "#165848" }}>
+                <NavLink to="/profile" className={activeLink}>
                   <FaUserCircle size={16} />
                   Hi, {displayName}
-                </a>
+                </NavLink>
               </>
             </li>
             <li>
