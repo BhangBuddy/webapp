@@ -46,7 +46,7 @@ function App() {
           <Route path='/auth/success/' element={<Googlesuccess/>}/>
           <Route path="/" element={<Home />} />
           <Route path="/reset_password/:id/:token" element={<Confirm />} />
-          <Route path='/profile' element={<Profile/>} />
+          <Route path='/profile/*' element={<Profile/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

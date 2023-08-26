@@ -1,0 +1,14 @@
+.profile {
+    display: flex;
+  }
+
+  .navbar {
+    display: flex;
+    width: 25%;
+    min-height: 80vh;
+    /* border: 2px solid red; */
+  }
+  .content {
+    display: flex;
+    width: 75%;
+  }
