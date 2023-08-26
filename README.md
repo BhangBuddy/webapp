@@ -1,4 +1,4 @@
-# Bangola
+# Bhangola
 # installation 
 cd frontend
 npm install
