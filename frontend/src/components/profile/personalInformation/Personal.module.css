@@ -1,0 +1,35 @@
+.personal-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+    gap: 1rem;
+}
+
+.personal-boxes {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.person-box-1  {
+    background-color: #218c751b;
+    width: calc(100%/3.6);
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    gap: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 5px;
+}
+
+.person-box-1 h4 {
+    font-size: 22px;
+}
+.person-box-1 p  {
+    font-size: 18px;
+}

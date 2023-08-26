@@ -1,0 +1,55 @@
+.navbar {
+    border-right: 1px solid #ccc;
+    min-height: 80vh;
+    width: 100%;
+  }
+  
+  .navbar .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem;
+    background-color: #165848;
+    color: white;
+    gap: 0.5rem;
+  }
+  
+  .navbar .user h4 {
+    color: #fff;
+  }
+
+  .profile ul {
+    display: block;
+    text-align: center;
+  }
+
+  
+  .navbar .profile ul li {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+  }
+  
+  .navbar .profile ul li a {
+    display: block;
+    width: 100%;
+    color: black;
+    transition: all 0.3s;
+  }
+  .profile ul li a:hover {
+    color: #165848;
+  }
+  
+  .active {
+    cursor: pointer;
+  }
+  
+  .active::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: orangered;
+  }
