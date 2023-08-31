@@ -15,6 +15,7 @@ app.use(cors());
 app.use(express.urlencoded());
 app.use(express.json())
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(session({
     name: 'Bhangola',
    

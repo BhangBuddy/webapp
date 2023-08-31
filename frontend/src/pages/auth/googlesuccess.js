@@ -13,7 +13,7 @@ const Googlesuccess = () => {
        dat()
     })
     const dat=async()=>{
-        
+        console.log(username)
         await localStorage.setItem("token",token);
         await localStorage.setItem("username",username)
          window.location.href="/"

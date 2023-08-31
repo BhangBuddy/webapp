@@ -9,7 +9,7 @@ import ProductDetails from './components/product-details/ProductDetails';
 import Cardapi from './components/cartcard/Cardapi';
 import Confirm from './pages/auth/confirmReset';
 import OTPverify from './pages/auth/OTPverify';
- 
+import 'font-awesome/css/font-awesome.min.css';
 import Googlesuccess from './pages/auth/googlesuccess';
 
 

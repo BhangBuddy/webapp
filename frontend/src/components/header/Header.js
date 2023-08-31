@@ -7,18 +7,47 @@ import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase/config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+// import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import {
-  REMOVE_ACTIVE_USER,
-  SET_ACTIVE_USER,
-} from "../../redux/slice/authSlice";
+// import {
+//   REMOVE_ACTIVE_USER,
+//   SET_ACTIVE_USER,
+// } from "../../redux/slice/authSlice";
 import { toast } from "react-toastify";
-import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
+// import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
 import { FaTimes } from "react-icons/fa";
+import store from "../../redux/store";
+import axios from "axios";
+import { setUser } from "../../redux/slice/profileSlice";
 
 const Header = () => {
   const token = localStorage.getItem("token");
+  const [data,setData]=useState(" ");
+ const dispatch = useDispatch();
+    
+
+  // const dat = useSelector((state) => state.profile);
+  // const data = dat.user;
+  //get data
+ useEffect(()=>{
+  const home = async ()=>{
+    try {
+     const res = await axios.get("http://localhost:8000/",{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+     })
+        setData(res.data.user)
+    } catch (error) {
+     console.log("erro in fetch data")
+    }
+ }
+ home();
+ 
+ },[data])
+ console.log(data.avatar);
+
+
   const cartItems = useSelector(selectCartItems);
   const cartItemCount = cartItems.length;
   const cart = (
@@ -36,7 +65,7 @@ const Header = () => {
   const displayName = localStorage.getItem("username");
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
 
   // Tells about currently signed in user
   // useEffect(() => {
@@ -65,13 +94,12 @@ const Header = () => {
   // }, [dispatch, displayName]);
 
   const logoutUser = () => {
-    localStorage.removeItem("token");
+    localStorage.clear();
     toast.success("logout successfully");
-    setTimeout(()=>{
-     window.location.href="/"
-    },1000)
-
-   };
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 1000);
+  };
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -154,34 +182,61 @@ const Header = () => {
                 Contact
               </NavLink>
             </li>
-            {token ? <>
-             
-            <li>
+            {token ? (
               <>
-                <NavLink to="/profile" className={activeLink}>
-                  <FaUserCircle size={16} />
-                  Hi, {displayName}
-                </NavLink>
+                <li>
+                  <>
+                    <NavLink to="/profile" className={activeLink}>
+                     
+                      {data.avatar ? (
+                        data.avatar.length > 150 ? (
+                          <img
+                            height={30}
+                            width={30}
+                            style={{ borderRadius: 15 }}
+                            src={`data:image/png;base64,${data.avatar}`}
+                          />
+                        ) : (
+                          <img
+                            height={30}
+                            width={30}
+                            style={{ borderRadius: 15 }}
+                            src={data.avatar}
+                          />
+                        )
+                      ) : (
+                        <FaUserCircle size={40} color="#fff" />
+                      )}
+                     Hi,{token?data.username:null}
+                  
+                    </NavLink>
+                  
+                  </>
+                </li>
+                <li>
+                  <>
+                    <NavLink to="/" onClick={logoutUser}>
+                      Logout
+                    </NavLink>
+                  </>
+                </li>
               </>
-            </li>
-            <li>
+            ) : (
               <>
-                <NavLink to="/" onClick={logoutUser}>
-                  Logout
-                </NavLink>
+                <li>
+                  <>
+                    <NavLink
+                      className={activeLink}
+                      to="/login"
+                      onClick={hideMenu}
+                    >
+                      Login
+                    </NavLink>
+                  </>
+                </li>
               </>
-            </li>
-             </>: <> 
-             <li>
-              <>
-                <NavLink className={activeLink} to="/login" onClick={hideMenu}>
-                  Login
-                </NavLink>
-              </>
-            </li>
-             
-              </>}
-           
+            )}
+
             {cart}
           </ul>
         </nav>

@@ -115,6 +115,7 @@ const Login = () => {
     try {
       const res = await axios.post("http://localhost:8000/create-session", { email, password});
       console.log(res)
+      
       if (res.data.status === true) {
         window.location.href="/";
         // navigate("/");

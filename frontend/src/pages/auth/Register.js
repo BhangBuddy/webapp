@@ -4,8 +4,7 @@ import registerImg from "../../assets/register.gif";
 import Card from "../../components/card/Card";
 import Loader from "../../components/loader/Loader";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../firebase/config";
+// import { auth } from "../../firebase/config";
 import { toast } from "react-toastify";
 import axios, {Axios} from "axios"
 
