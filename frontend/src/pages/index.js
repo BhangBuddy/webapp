@@ -8,3 +8,4 @@ export {default as Reset} from './auth/Reset';
 export {default as Shop} from './shop/Shop';
 export {default as About} from './about/About';
 export {default as Profile} from './profile/Profile';
+export {default as Admin} from './admin/Admin';

@@ -147,6 +147,7 @@ const Login = () => {
           <div className={styles.form}>
             <h2>Login</h2>
             <form onSubmit={logi}>
+           
               <input
                 type="email"
                 placeholder="Email"
@@ -154,8 +155,6 @@ const Login = () => {
                 onChange={(e)=>setEmail(e.target.value)}
                 value={email}
                 name="email"
-                
-               
               />
               <input
                 type="password"
@@ -164,8 +163,6 @@ const Login = () => {
                 onChange={(e)=>setPassword(e.target.value)}
                 value={password}
                name="password"
-  
-               
               />
               <button className="--btn --btn-primary --btn-block" type="submit">
                 Login

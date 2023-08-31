@@ -67,17 +67,7 @@ const PersonalInfo = () => {
       <div className={styles["personal-container"]}>
         <h2>Personal Information</h2>
         <button
-  onClick={onToggle}
-  style={{
-    height: 30,
-    width: 100,
-    borderRadius: 10,
-    background: "#218c74",
-    fontSize: 14,
-    fontWeight: "bold",
-    color: "white",
-  }}
->
+  onClick={onToggle} className={styles["btnProfile"]}>
   {user && button ? "edit" : "update"}
 </button>
 
@@ -139,10 +129,6 @@ const PersonalInfo = () => {
                 }}
               />
             )}
-          </div>
-          <div className={styles["person-box-1"]}>
-            <h4>Role</h4>
-            <p>not assigned</p>
           </div>
         </div>
       </div>
