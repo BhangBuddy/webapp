@@ -8,12 +8,14 @@ const jwt = require('jsonwebtoken');
 
 function generateToken(user) {
   const payload = { id: user.id, email: user.email };
-  const token = jwt.sign(payload, 'your-secret-key', { expiresIn: '1h' });
+  const token = jwt.sign(payload, process.env.JWT, { expiresIn: '1h' });
   return token;
 }
 
-
-router.get('/login',auth2.auth,auth.authentication)
+router.get('/profile',auth2.auth,auth.profile);
+router.get('/',auth2.auth,auth.home);
+router.put('/update/:id',auth2.auth,auth.uploadProfile)
+router.put('/updateProfile/:id',auth2.auth,auth.updateContent)
 router.post("/forget-password",forget.forgetPassword);
 router.post("/reset_password/:id/:token",forget.resetPassword);
 router.post('/create', auth.create);
