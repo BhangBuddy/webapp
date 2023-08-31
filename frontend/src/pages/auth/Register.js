@@ -14,6 +14,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [useremail, setUseremail] = useState("");
+
   /*const navigate = useNavigate();
 
   const registerUser = (e) => {
@@ -76,6 +78,14 @@ const Register = () => {
           <div className={styles.form}>
             <h2>Register</h2>
             <form onSubmit={register}>
+            <input
+                type="text"
+                placeholder="Username"
+                required
+                onChange={(e)=>setEmail(e.target.value)}
+                value={useremail}
+                name="username"
+              />
               <input
                 type="email"
                 onChange={(e)=>setEmail(e.target.value)}

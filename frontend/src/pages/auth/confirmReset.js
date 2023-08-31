@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import {toast} from "react-toastify"
+import styles from './auth.module.css';
 
 const Confirm = () => {
     const navigate = useNavigate()
@@ -42,7 +43,7 @@ const Confirm = () => {
       
   return <>
   <h2 class='text-primary text-center'>Reset Password</h2>
-    <form className='form-control' onSubmit={reset}>
+    <form className={styles["form-control"]} onSubmit={reset}>
         <input onChange={(e)=>setPass(e.target.value)} value={pass} type="password" placeholder='Enter password' required/>
         <input onChange={(e)=>setPass1(e.target.value)} value={pass1} type="password" placeholder='Confirm password' required/>
         <button className="btn btn-outline-dark" type='submit'>Update Password</button>

@@ -1,5 +1,19 @@
 
 
+.btnAdmin {
+    padding: 6px 8px 6px 8px;
+    border: none;
+    background-color: var(--light-green);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.btnAdmin:hover {
+    color: black;
+    background-color: var(--palm-green);
+}
+
 
 .fixed {
     width: 100%;

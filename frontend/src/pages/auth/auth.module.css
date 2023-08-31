@@ -106,3 +106,19 @@ section a {
     width: 100%;
   }
 }
+
+
+
+
+.form-control form input[type="password"] {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0.8rem;
+  margin: 1rem auto;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

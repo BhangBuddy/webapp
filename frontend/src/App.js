@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { Home, Shop, About, Contact, Cart, Login, Register, Reset, Profile } from './pages';
+import { Home, Shop, About, Contact, Cart, Login, Register, Reset, Profile, Admin } from './pages';
 import { Header, Footer } from './components';
 import { ToastContainer } from 'react-toastify';
-import ProductDetails from './components/product-details/ProductDetails';
-import Cardapi from './components/cartcard/Cardapi';
+// import ProductDetails from './components/product-details/ProductDetails';
+// import Cardapi from './components/cartcard/Cardapi';
 import Confirm from './pages/auth/confirmReset';
 import OTPverify from './pages/auth/OTPverify';
 import 'font-awesome/css/font-awesome.min.css';
@@ -30,6 +30,7 @@ function App() {
         <ToastContainer />
         <Header />
         <Routes>
+        <Route path='/admin/*' element={<Admin/> } />
         <Route path="/contact" element={<Contact />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />

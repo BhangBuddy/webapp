@@ -2,13 +2,13 @@ import styles from "./Header.module.css";
 import { selectCartItems } from "../../redux/slice/cartSlice";
 import { useSelector } from "react-redux";
 import logo from "../../assets/bhangola-logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { useEffect, useState } from "react";
-import { auth } from "../../firebase/config";
+// import { auth } from "../../firebase/config";
 // import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 // import {
 //   REMOVE_ACTIVE_USER,
 //   SET_ACTIVE_USER,
@@ -16,14 +16,14 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 // import ShowOnLogin, { ShowOnLogout } from "../hiddenLink/hiddenLink";
 import { FaTimes } from "react-icons/fa";
-import store from "../../redux/store";
+// import store from "../../redux/store";
 import axios from "axios";
-import { setUser } from "../../redux/slice/profileSlice";
+// import { setUser } from "../../redux/slice/profileSlice";
 
 const Header = () => {
   const token = localStorage.getItem("token");
   const [data,setData]=useState(" ");
- const dispatch = useDispatch();
+//  const dispatch = useDispatch();
     
 
   // const dat = useSelector((state) => state.profile);
@@ -162,6 +162,11 @@ const Header = () => {
             onClick={hideMenu}
           />
           <ul>
+          <li>
+      <Link to="/admin/home">
+        <button className={styles.btnAdmin}>Admin</button>
+        </Link>
+      </li>
             <li>
               <NavLink className={activeLink} to="/" onClick={hideMenu}>
                 Home
@@ -184,22 +189,22 @@ const Header = () => {
             </li>
             {token ? (
               <>
-                <li>
+                <li  >
                   <>
-                    <NavLink to="/profile" className={activeLink}>
+                    <NavLink to="/profile" className={activeLink}  >
                      
                       {data.avatar ? (
                         data.avatar.length > 150 ? (
                           <img
-                            height={30}
-                            width={30}
-                            style={{ borderRadius: 15 }}
+                            height={20}
+                            width={20}
+                            style={{ borderRadius: 15,}}
                             src={`data:image/png;base64,${data.avatar}`}
                           />
                         ) : (
                           <img
-                            height={30}
-                            width={30}
+                            height={20}
+                            width={20}
                             style={{ borderRadius: 15 }}
                             src={data.avatar}
                           />
