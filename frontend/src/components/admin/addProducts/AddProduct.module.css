@@ -1,0 +1,80 @@
+
+
+.product {
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1rem;
+}
+.product .card {
+    width: 95%;
+    padding: 1rem;
+    /* border: 2px solid red; */
+  }
+  
+  .product form label {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  
+  .product form input[type="text"],
+  .product form input[type="number"],
+  .product form input[type="file"],
+  .product form input[type="email"],
+  .product form select,
+  .product form textarea,
+  .product form input[type="password"] {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 1rem;
+    /* margin: 1rem auto; */
+    margin: 1rem 0rem 1rem 0rem;
+    width: 80%;
+    border: 1px solid #777;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+
+  
+  .product form .progress {
+    background-color: #aaa;
+    border: 1px solid transparent;
+    border-radius: 10px;
+  }
+  
+  .product form .progress .progress-bar {
+    background-color: var(--light-green);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 1rem;
+    width: 80%;
+  }
+  
+  .group {
+    border: 1px solid var(--light-green);
+    padding: 5px;
+  }
+
+  .Adminbtn {
+    padding: 8px;
+    color: white;
+    border: none;
+    background-color: var(--light-green);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .Adminbtn:hover {
+    background-color: var(--light-green);
+  }
+  
