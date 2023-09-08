@@ -45,7 +45,7 @@ const Header = () => {
  home();
  
  },[data])
- console.log(data.avatar);
+
 
 
   const cartItems = useSelector(selectCartItems);

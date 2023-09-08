@@ -1,32 +1,45 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Contact = () => {
-  const form = useRef();
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [message, setMessage] = useState('');
+  const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-
-    emailjs
-      .sendForm(
-        "service_32bymb7",
-        "template_4t7q10j",
-        form.current,
-        "5Q97n1dxlS2tEyxUu"
-      )
-      .then(
-        (result) => {
-          toast.success("Message sent successfully");
-        },
-        (error) => {
-          toast.error(error.text);
-        }
-      );
-    e.target.reset();
+    const data={
+      email,
+      name,
+      message,
+      phone,
+      subject
+    }
+     try {
+      const res= await axios.post('http://localhost:8000/contactus',data)
+      if(res.data.status===true){
+        toast.success(res.data.message)
+        setEmail(" ")
+        setName(" ")
+        setSubject(" ")
+        setPhone(" ")
+        setMessage(" ")
+     
+      }else{
+        
+        toast.error(res.data.message)
+      }
+     } catch (error) {
+      toast.error("error in send message")
+     }
+   
   };
 
 
@@ -64,14 +77,14 @@ const Contact = () => {
           </div>
 
           <div className={styles["sub-2"]}>
-            <form ref={form} onSubmit={sendEmail}>
+            <form  onSubmit={sendEmail}>
               <div className={styles["users"]}>
-                <input type="text" placeholder="Name" name="user_name" required />
-                <input type="email" placeholder="Email" name="user_email" required />
+                <input type="text" placeholder="Name" name="user_name" required onChange={(e)=>setName(e.target.value)}/>
+                <input type="email" placeholder="Email" name="user_email" required onChange={(e)=>setEmail(e.target.value)} />
               </div>
               <div className={styles["users"]}>
-                <input type="text" placeholder="Subject" required name="subject" />
-                <input type="tel" placeholder="Contact Number" name="phone" required />
+                <input type="text" placeholder="Subject" required name="subject" onChange={(e)=>setSubject(e.target.value)}/>
+                <input type="tel" placeholder="Contact Number" name="phone" required onChange={(e)=>setPhone(e.target.value)} />
               </div>
 
               <textarea
@@ -80,6 +93,7 @@ const Contact = () => {
                 cols="30"
                 rows="10"
                 placeholder="write your message"
+                onChange={(e)=>setMessage(e.target.value)}
               ></textarea>
 
               <button className={styles["contact-button"]}>Send Message</button>
